@@ -1,0 +1,31 @@
+{
+  "name": "mb.Raumtrend - Raumausstattung Bonn & Sankt Augustin",
+  "short_name": "mb.Raumtrend",
+  "description": "Ihr Spezialist für Innenraumgestaltung in Bonn, Sankt Augustin & Rhein-Sieg-Kreis. Bodenbeläge, Wandgestaltung & Raumausstattung. 20+ Jahre Erfahrung.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#162D4A",
+  "theme_color": "#162D4A",
+  "lang": "de-DE",
+  "categories": ["business", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

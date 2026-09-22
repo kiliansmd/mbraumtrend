@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- House shape with roof -->
+  <g>
+    <!-- Main house body -->
+    <path d="M8 35 L8 72 L52 72 L52 35" fill="#1a2e4a" stroke="#1a2e4a" stroke-width="2"/>
+    <!-- Roof -->
+    <path d="M2 38 L30 12 L58 38" fill="none" stroke="#8b2635" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Arrow pointing right (dynamic element) -->
+    <path d="M38 42 L62 42 L62 32 L78 48 L62 64 L62 54 L38 54 Z" fill="#8b2635"/>
+  </g>
+  
+  <!-- Text: mb.Raumtrend -->
+  <g fill="#1a2e4a">
+    <!-- mb. in bold -->
+    <text x="92" y="52" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="700">
+      <tspan fill="#8b2635">mb.</tspan><tspan fill="#1a2e4a">Raumtrend</tspan>
+    </text>
+  </g>
+</svg>
