@@ -471,4 +471,4 @@
 
 #schnellanfrage .text-accent { color: #edb0b0; }
 
-main h1, main h2, main h3, .prose { overflow-wrap: anywhere; }
+h1, h2, h3, .prose { overflow-wrap: anywhere; }

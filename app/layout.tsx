@@ -8,18 +8,18 @@ import './globals.css'
 
 const dmSans = DM_Sans({ variable: "--font-dm-sans",
   subsets: ["latin"],
-  display: "swap"
+  display: "optional"
 });
 const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", preload: false,
   subsets: ["latin"],
   weight: ["400"],
   style: ["italic"],
-  display: "swap"
+  display: "optional"
 });
 const caveat = Caveat({ variable: "--font-caveat",
   weight: ["400"],
   subsets: ["latin"],
-  display: "swap"
+  display: "optional"
 });
 
 export const viewport = {
