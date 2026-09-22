@@ -31,7 +31,7 @@ export function HeroSection() {
 
           {/* Logo Style Header */}
           <div className="mb-8">
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-none">
+            <h1 className="text-[clamp(2.25rem,12vw,3rem)] md:text-6xl lg:text-8xl font-bold tracking-tight leading-none">
               <span className="text-[#dc9292]">mb.</span>
               <span className="text-primary-foreground">Raumtrend</span>
             </h1>
@@ -74,7 +74,6 @@ export function HeroSection() {
                 href="https://share.google/9EDWArteaFyrGohsJ" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="5.0 Kundenbewertungen auf Google ansehen"
                 className="flex items-center gap-3 bg-primary-foreground/10 hover:bg-primary-foreground/15 rounded-xl px-4 py-3 transition-colors"
               >
                 <svg className="h-8 w-8" viewBox="0 0 24 24">

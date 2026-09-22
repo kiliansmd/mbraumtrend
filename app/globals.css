@@ -470,3 +470,5 @@
 .prose a { text-decoration: underline; text-underline-offset: .2em; }
 
 #schnellanfrage .text-accent { color: #edb0b0; }
+
+main h1, main h2, main h3, .prose { overflow-wrap: anywhere; }

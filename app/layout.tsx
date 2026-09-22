@@ -17,6 +17,7 @@ const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", preload: fa
   display: "swap"
 });
 const caveat = Caveat({ variable: "--font-caveat",
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap"
 });

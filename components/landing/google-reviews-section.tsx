@@ -169,7 +169,7 @@ export function GoogleReviewsSection() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button asChild variant="outline" className="bg-transparent">
+          <Button asChild variant="outline" className="bg-transparent max-w-full whitespace-normal h-auto min-h-10 py-3">
             <a 
               href="https://share.google/9EDWArteaFyrGohsJ" 
               target="_blank" 
