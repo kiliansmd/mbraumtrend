@@ -76,7 +76,7 @@ export function GallerySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {galleryImages.map((image, index) => (
             <button
               key={index}
@@ -88,11 +88,11 @@ export function GallerySection() {
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 400px"
                 loading="lazy"
                 quality={80}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-visible:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-left">
                   <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
                     {image.category}
@@ -112,7 +112,7 @@ export function GallerySection() {
 
       {/* Lightbox Dialog */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl p-0 bg-card border-border">
+        <DialogContent aria-describedby={undefined} className="max-w-4xl p-0 bg-card border-border">
           <VisuallyHidden>
             <DialogTitle>{selectedImage?.description || "Projektbild"}</DialogTitle>
           </VisuallyHidden>

@@ -6,9 +6,12 @@ import { Button } from "@/components/ui/button"
 import { WhatsAppButtonClient } from "./whatsapp-button-client"
 
 export const metadata: Metadata = {
-  title: "Buchung bestätigt | mb.Raumtrend",
+  alternates: { canonical: "/buchung-bestaetigt" },
+  openGraph: { title: "Buchung bestätigt | mb.Raumtrend", description: "Vielen Dank für Ihre Terminbuchung bei mb.Raumtrend. Hier finden Sie Tipps zur Vorbereitung auf Ihr Beratungsgespräch.", url: "/buchung-bestaetigt" },
+  twitter: { card: "summary_large_image", title: "Buchung bestätigt | mb.Raumtrend", description: "Vielen Dank für Ihre Terminbuchung bei mb.Raumtrend. Hier finden Sie Tipps zur Vorbereitung auf Ihr Beratungsgespräch." },
+  title: "Buchung bestätigt",
   description: "Vielen Dank für Ihre Terminbuchung bei mb.Raumtrend. Hier finden Sie Tipps zur Vorbereitung auf Ihr Beratungsgespräch.",
-  robots: "noindex, nofollow",
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 }
 
 export default function BuchungBestaetigtPage() {
@@ -61,7 +64,7 @@ export default function BuchungBestaetigtPage() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+      <main id="main-content" tabIndex={-1} className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-3xl mx-auto">
           
           {/* Thank You Message */}
@@ -205,7 +208,7 @@ export default function BuchungBestaetigtPage() {
               Datenschutz
             </Link>
           </div>
-          <p className="mt-6 text-xs text-primary-foreground/50">
+          <p className="mt-6 text-xs text-primary-foreground/75">
             2026 mb.Raumtrend. Alle Rechte vorbehalten.
           </p>
         </div>

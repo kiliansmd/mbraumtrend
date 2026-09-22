@@ -4,9 +4,10 @@ interface LogoProps {
   variant?: "default" | "white"
   className?: string
   animated?: boolean
+  priority?: boolean
 }
 
-export function Logo({ variant = "default", className = "", animated = false }: LogoProps) {
+export function Logo({ variant = "default", className = "", animated = false, priority = false }: LogoProps) {
   const logoSrc = variant === "white" 
     ? "/images/logo-mb-09022026-white.png"
     : "/images/logo-mb-09022026-rgb.png"
@@ -18,7 +19,7 @@ export function Logo({ variant = "default", className = "", animated = false }: 
       width={220}
       height={50}
       className={`${className} ${animated ? "transition-transform hover:scale-[1.02] active:scale-[0.98] duration-300" : ""}`}
-      priority
+      priority={priority}
     />
   )
 }

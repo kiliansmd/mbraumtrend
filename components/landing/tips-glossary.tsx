@@ -118,7 +118,6 @@ export function TipsGlossary() {
   const [activeCategory, setActiveCategory] = useState<Category>("farben")
   const [expandedTip, setExpandedTip] = useState<string | null>(null)
 
-  const activeData = glossaryData.find((cat) => cat.id === activeCategory)!
 
   return (
     <section id="tipps" className="py-20 md:py-28 bg-card">
@@ -144,6 +143,8 @@ export function TipsGlossary() {
             <button
               key={category.id}
               type="button"
+              aria-pressed={activeCategory === category.id}
+              aria-controls={`tips-${category.id}`}
               onClick={() => {
                 setActiveCategory(category.id)
                 setExpandedTip(null)
@@ -164,6 +165,8 @@ export function TipsGlossary() {
 
         {/* Active Category Content */}
         <div className="max-w-4xl mx-auto">
+          {glossaryData.map((activeData) => (
+          <div key={activeData.id} id={`tips-${activeData.id}`} hidden={activeCategory !== activeData.id}>
           {/* Category Header */}
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
@@ -190,6 +193,8 @@ export function TipsGlossary() {
                 >
                   <button
                     type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`tip-${activeData.id}-${index}`}
                     onClick={() => setExpandedTip(isExpanded ? null : `${activeData.id}-${index}`)}
                     className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   >
@@ -219,7 +224,7 @@ export function TipsGlossary() {
                     />
                   </button>
                   
-                  <div className={cn(
+                  <div id={`tip-${activeData.id}-${index}`} aria-hidden={!isExpanded} className={cn(
                     "overflow-hidden transition-all duration-300",
                     isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   )}>
@@ -233,6 +238,9 @@ export function TipsGlossary() {
               )
             })}
           </div>
+
+          </div>
+          ))}
 
           {/* CTA */}
           <div className="text-center mt-10 p-6 bg-secondary rounded-2xl">

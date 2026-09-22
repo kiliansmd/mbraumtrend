@@ -105,11 +105,13 @@ export function USPShowcase() {
         </div>
 
         {/* Service Tabs - Desktop */}
-        <div className="hidden md:flex justify-center gap-3 mb-12">
+        <div className="hidden md:flex flex-wrap justify-center gap-3 mb-12">
           {services.map((service) => (
             <button
               key={service.id}
               type="button"
+              aria-pressed={activeService.id === service.id}
+              aria-controls={`service-${service.id}`}
               onClick={() => setActiveService(service)}
               className={cn(
                 "flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300",
@@ -126,35 +128,38 @@ export function USPShowcase() {
 
         {/* Active Service Detail - Desktop */}
         <div className="hidden md:block">
+          {services.map((service) => (
           <div
-            key={activeService.id}
+            key={service.id}
+            id={`service-${service.id}`}
+            hidden={activeService.id !== service.id}
             className={cn(
               "bg-gradient-to-br rounded-3xl p-10 md:p-14 border border-border/40 transition-all duration-300",
-              activeService.accent
+              service.accent
             )}
           >
             <div className="flex flex-col lg:flex-row gap-10 items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-                    <activeService.icon className="h-7 w-7 text-primary-foreground" />
+                    <service.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                      {activeService.title}
+                      {service.title}
                     </h3>
                     <p className="text-accent font-semibold">
-                      {activeService.subtitle}
+                      {service.subtitle}
                     </p>
                   </div>
                 </div>
                 <p className="text-muted-foreground text-lg leading-relaxed mt-4 max-w-xl">
-                  {activeService.description}
+                  {service.description}
                 </p>
               </div>
               <div className="flex-1">
                 <ul className="grid gap-4">
-                  {activeService.features.map((feature) => (
+                  {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-accent/15 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="h-3.5 w-3.5 text-accent" />
@@ -175,6 +180,7 @@ export function USPShowcase() {
               </div>
             </div>
           </div>
+          ))}
         </div>
 
         {/* Service Cards - Mobile */}

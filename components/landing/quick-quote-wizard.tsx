@@ -184,7 +184,7 @@ export function QuickQuoteWizard() {
             <p className="text-xl text-primary-foreground/80 mb-4">
               Vielen Dank, {contact.name.split(" ")[0]}! Ihre Anfrage wurde an WhatsApp weitergeleitet.
             </p>
-            <p className="text-base text-primary-foreground/60 mb-8">
+            <p className="text-base text-primary-foreground/75 mb-8">
               Marcel Brischke meldet sich innerhalb von 24 Stunden persönlich bei Ihnen. 
               Falls WhatsApp nicht geöffnet wurde, erreichen Sie uns auch direkt unter{" "}
               <a href="tel:022418664342" className="underline text-primary-foreground/80 hover:text-primary-foreground">02241-8664342</a> oder{" "}
@@ -249,7 +249,7 @@ export function QuickQuoteWizard() {
               {[1, 2, 3, 4].map((s) => (
                 <div 
                   key={s}
-                  className={`text-xs font-medium ${s <= step ? 'text-accent' : 'text-primary-foreground/40'}`}
+                  className={`text-xs font-medium ${s <= step ? 'text-accent' : 'text-primary-foreground/75'}`}
                 >
                   {s === 1 ? 'Projekt' : s === 2 ? 'Größe' : s === 3 ? 'Zeitrahmen' : 'Kontakt'}
                 </div>
@@ -269,6 +269,7 @@ export function QuickQuoteWizard() {
                   {projectTypes.map((type) => (
                     <button
                       key={type.id}
+                      aria-pressed={projectType === type.id}
                       onClick={() => setProjectType(type.id)}
                       className={`p-4 md:p-5 rounded-xl md:rounded-2xl border-2 transition-all text-left group ${
                         projectType === type.id
@@ -282,7 +283,7 @@ export function QuickQuoteWizard() {
                         <type.icon className="h-5 w-5 md:h-6 md:w-6" />
                       </div>
                       <div className="font-semibold text-sm md:text-base mb-0.5 md:mb-1">{type.label}</div>
-                      <div className="text-xs md:text-sm text-primary-foreground/60">{type.description}</div>
+                      <div className="text-xs md:text-sm text-primary-foreground/75">{type.description}</div>
                     </button>
                   ))}
                 </div>
@@ -299,6 +300,7 @@ export function QuickQuoteWizard() {
                   {roomSizes.map((size) => (
                     <button
                       key={size.id}
+                      aria-pressed={roomSize === size.id}
                       onClick={() => setRoomSize(size.id)}
                       className={`p-4 md:p-5 rounded-xl md:rounded-2xl border-2 transition-all text-left ${
                         roomSize === size.id
@@ -308,7 +310,7 @@ export function QuickQuoteWizard() {
                     >
                       <div className="font-semibold text-base md:text-lg mb-0.5 md:mb-1">{size.label}</div>
                       <div className="text-accent font-medium text-sm md:text-base mb-0.5 md:mb-1">{size.description}</div>
-                      <div className="text-xs md:text-sm text-primary-foreground/60">{size.example}</div>
+                      <div className="text-xs md:text-sm text-primary-foreground/75">{size.example}</div>
                     </button>
                   ))}
                 </div>
@@ -325,6 +327,7 @@ export function QuickQuoteWizard() {
                   {timeframes.map((tf) => (
                     <button
                       key={tf.id}
+                      aria-pressed={timeframe === tf.id}
                       onClick={() => setTimeframe(tf.id)}
                       className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${
                         timeframe === tf.id
@@ -358,46 +361,55 @@ export function QuickQuoteWizard() {
                 </p>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Ihr Name *</label>
+                    <label htmlFor="quote-name" className="block text-sm font-medium mb-2">Ihr Name *</label>
                     <div className="relative">
-                      <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/40" />
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/75" />
                       <input
                         type="text"
+                        id="quote-name"
+                        name="name"
+                        autoComplete="name"
                         value={contact.name}
                         onChange={(e) => setContact({ ...contact, name: e.target.value })}
                         placeholder="Max Mustermann"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Telefon (bevorzugt)</label>
+                    <label htmlFor="quote-phone" className="block text-sm font-medium mb-2">Telefon (bevorzugt)</label>
                     <div className="relative">
-                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/40" />
+                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/75" />
                       <input
                         type="tel"
+                        id="quote-phone"
+                        name="phone"
+                        autoComplete="tel"
                         value={contact.phone}
                         onChange={(e) => setContact({ ...contact, phone: e.target.value })}
                         placeholder="0228 123456"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">oder E-Mail</label>
+                    <label htmlFor="quote-email" className="block text-sm font-medium mb-2">oder E-Mail</label>
                     <div className="relative">
-                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/40" />
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary-foreground/75" />
                       <input
                         type="email"
+                        id="quote-email"
+                        name="email"
+                        autoComplete="email"
                         value={contact.email}
                         onChange={(e) => setContact({ ...contact, email: e.target.value })}
                         placeholder="max@beispiel.de"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
                       />
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-primary-foreground/50 mt-4 text-center">
+                <p className="text-xs text-primary-foreground/75 mt-4 text-center">
                   Ihre Daten werden vertraulich behandelt. 
                   <a href="/datenschutz" className="underline hover:text-primary-foreground ml-1">Datenschutz</a>
                 </p>
@@ -451,7 +463,7 @@ export function QuickQuoteWizard() {
           </div>
 
           {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-primary-foreground/60">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-primary-foreground/75">
             <div className="flex items-center gap-2">
               <Check className="h-4 w-4 text-accent" />
               <span>100% kostenlos</span>

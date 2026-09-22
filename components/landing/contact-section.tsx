@@ -39,7 +39,7 @@ export function ContactSection() {
                   />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">Marcel Brischke</h3>
-                <p className="text-primary-foreground/60 text-sm mb-6">
+                <p className="text-primary-foreground/75 text-sm mb-6">
                   Inhaber & Raumausstatter
                 </p>
 
@@ -65,7 +65,7 @@ export function ContactSection() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[10px] text-primary-foreground/50">Google Bewertungen</p>
+                    <p className="text-[10px] text-primary-foreground/75">Google Bewertungen</p>
                   </div>
                 </a>
 

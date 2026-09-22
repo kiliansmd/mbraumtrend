@@ -60,7 +60,7 @@ export function WhyUsSection() {
               </div>
               
               {/* Old Way - crossed out */}
-              <div className="flex items-start gap-3 mb-4 opacity-50 group-hover:opacity-60 transition-opacity">
+              <div className="flex items-start gap-3 mb-4 opacity-100 transition-opacity">
                 <Ban className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
                 <p className="text-muted-foreground line-through text-sm">{feature.oldWay}</p>
               </div>
@@ -99,7 +99,7 @@ export function WhyUsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="absolute -bottom-3 -right-3 bg-background rounded-xl px-3 py-1.5 shadow-lg flex items-center gap-1.5 hover:shadow-xl hover:scale-105 transition-all duration-200"
-                    aria-label="Google Bewertungen ansehen"
+                    aria-label="5.0 Google Bewertungen ansehen"
                   >
                     <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24">
                       <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -138,7 +138,7 @@ export function WhyUsSection() {
                   <div className="h-px w-8 bg-accent" />
                   <div>
                     <p className="text-primary-foreground font-bold text-lg">Marcel Brischke</p>
-                    <p className="text-primary-foreground/60 text-sm">Inhaber & Gründer <span className="text-accent font-bold">mb.</span>Raumtrend</p>
+                    <p className="text-primary-foreground/75 text-sm">Inhaber & Gründer <span className="text-accent font-bold">mb.</span>Raumtrend</p>
                   </div>
                 </div>
 

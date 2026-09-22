@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+export const dynamic = 'force-static'
 export const alt = 'mb.Raumtrend - Exklusive Bodenbeläge, Wandgestaltung & Plissees'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
@@ -14,12 +14,13 @@ export default async function OGImage() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
+          gap: '0px',
           alignItems: 'flex-start',
           justifyContent: 'center',
           backgroundColor: '#0d1829',
           backgroundImage: 'linear-gradient(135deg, #0d1829 0%, #162d4a 100%)',
           position: 'relative',
-          padding: '80px',
+          padding: '52px 64px',
         }}
       >
         {/* Decorative elements */}
@@ -30,7 +31,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(194, 101, 58, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(194, 101, 58, 0.1) 0%, transparent 50%)',
+            backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(139, 26, 26, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(139, 26, 26, 0.1) 0%, transparent 50%)',
           }}
         />
         
@@ -40,11 +41,11 @@ export default async function OGImage() {
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            backgroundColor: 'rgba(194, 101, 58, 0.15)',
-            border: '2px solid rgba(194, 101, 58, 0.3)',
+            backgroundColor: 'rgba(139, 26, 26, 0.15)',
+            border: '2px solid rgba(139, 26, 26, 0.3)',
             borderRadius: '999px',
             padding: '12px 28px',
-            marginBottom: '32px',
+            marginBottom: '24px',
             position: 'relative',
           }}
         >
@@ -65,15 +66,15 @@ export default async function OGImage() {
           style={{
             display: 'flex',
             alignItems: 'baseline',
-            marginBottom: '28px',
+            marginBottom: '20px',
             position: 'relative',
           }}
         >
           <span
             style={{
-              fontSize: '96px',
+              fontSize: '82px',
               fontWeight: 700,
-              color: '#c2653a',
+              color: '#dc9292',
               letterSpacing: '-0.02em',
             }}
           >
@@ -81,7 +82,7 @@ export default async function OGImage() {
           </span>
           <span
             style={{
-              fontSize: '96px',
+              fontSize: '82px',
               fontWeight: 700,
               color: '#ffffff',
             }}
@@ -90,7 +91,7 @@ export default async function OGImage() {
           </span>
           <span
             style={{
-              fontSize: '96px',
+              fontSize: '82px',
               fontWeight: 700,
               color: '#ffffff',
               letterSpacing: '-0.02em',
@@ -103,7 +104,7 @@ export default async function OGImage() {
         {/* Tagline in script font style */}
         <p
           style={{
-            fontSize: '38px',
+            fontSize: '34px',
             fontStyle: 'italic',
             color: 'rgba(255, 255, 255, 0.95)',
             marginBottom: '24px',
@@ -116,11 +117,12 @@ export default async function OGImage() {
         {/* Description */}
         <p
           style={{
-            fontSize: '26px',
+            fontSize: '25px',
             color: 'rgba(255, 255, 255, 0.85)',
             lineHeight: 1.5,
             maxWidth: '900px',
-            marginBottom: '40px',
+            margin: '0 0 28px 0',
+            flexShrink: 0,
             position: 'relative',
           }}
         >
@@ -145,7 +147,7 @@ export default async function OGImage() {
               fontWeight: 600,
             }}
           >
-            <span style={{ color: '#fbbf24', fontSize: '26px' }}>★</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fbbf24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1z" /></svg>
             5.0 Google Bewertung
           </div>
           <div
@@ -158,7 +160,7 @@ export default async function OGImage() {
               fontWeight: 600,
             }}
           >
-            <span style={{ color: '#c2653a', fontSize: '26px' }}>✓</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc9292" strokeWidth="3"><path d="m4 12 5 5L20 6" /></svg>
             20+ Jahre Erfahrung
           </div>
           <div
@@ -171,7 +173,7 @@ export default async function OGImage() {
               fontWeight: 600,
             }}
           >
-            <span style={{ color: '#c2653a', fontSize: '26px' }}>✓</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc9292" strokeWidth="3"><path d="m4 12 5 5L20 6" /></svg>
             Kostenlose Beratung
           </div>
         </div>
@@ -184,7 +186,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             height: '8px',
-            background: 'linear-gradient(90deg, #c2653a 0%, #d4845f 50%, #c2653a 100%)',
+            background: 'linear-gradient(90deg, #dc9292 0%, #8b1a1a 50%, #dc9292 100%)',
           }}
         />
       </div>

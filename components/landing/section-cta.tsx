@@ -17,7 +17,7 @@ export function SectionCTA({
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 text-accent mb-2">
+            <div className="inline-flex items-center gap-2 text-[#edb0b0] mb-2">
               <Sparkles className="h-4 w-4" />
               <span className="text-sm font-medium">Kostenlos & unverbindlich</span>
             </div>

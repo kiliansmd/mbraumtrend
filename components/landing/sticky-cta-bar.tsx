@@ -19,8 +19,10 @@ export function StickyCTABar() {
   }, [])
 
   return (
-    <div 
-      className={`fixed bottom-0 left-0 right-0 z-40 md:hidden bg-primary border-t border-primary-foreground/10 shadow-lg pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ease-out ${
+    <div
+      aria-hidden={!isVisible}
+      inert={!isVisible}
+      className={`mobile-contact-bar fixed bottom-0 left-0 right-0 z-40 md:hidden bg-primary border-t border-primary-foreground/10 shadow-lg pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ease-out ${
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >
@@ -32,7 +34,7 @@ export function StickyCTABar() {
           <Phone className="h-4 w-4" />
           Anrufen
         </a>
-        <WhatsAppTriggerButton className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#25D366] text-white font-medium text-sm border-r border-primary-foreground/10 active:bg-[#25D366]/90 transition-colors">
+        <WhatsAppTriggerButton className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#147d3c] text-white font-medium text-sm border-r border-primary-foreground/10 active:bg-[#25D366]/90 transition-colors">
           <MessageCircle className="h-4 w-4" />
           WhatsApp
         </WhatsAppTriggerButton>

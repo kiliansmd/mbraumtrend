@@ -45,7 +45,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
           alt={partner.name}
           width={160}
           height={80}
-          className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
           loading="lazy"
         />
       ) : (
@@ -54,7 +54,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
           alt={partner.name}
           width={160}
           height={80}
-          className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
         />
       )}
       {/* Tooltip on hover */}
@@ -91,7 +91,7 @@ export function PartnerLogos() {
         </div>
 
         {/* Logo Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-6 md:gap-8 items-center justify-items-center">
           {partners.map((partner) => (
             <PartnerLogo key={partner.name} partner={partner} />
           ))}

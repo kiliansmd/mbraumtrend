@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 80, 85, 90],
     minimumCacheTTL: 31536000,
     remotePatterns: [
       {

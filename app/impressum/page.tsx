@@ -4,7 +4,10 @@ import { Logo } from "@/components/ui/logo"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Impressum | mb.Raumtrend",
+  alternates: { canonical: "/impressum" },
+  openGraph: { title: "Impressum | mb.Raumtrend", description: "Impressum und rechtliche Informationen von mb.Raumtrend - Ihr Spezialist für Raumausstattung und Innenraumgestaltung in Bonn.", url: "/impressum" },
+  twitter: { card: "summary_large_image", title: "Impressum | mb.Raumtrend", description: "Impressum und rechtliche Informationen von mb.Raumtrend - Ihr Spezialist für Raumausstattung und Innenraumgestaltung in Bonn." },
+  title: "Impressum",
   description: "Impressum und rechtliche Informationen von mb.Raumtrend - Ihr Spezialist für Raumausstattung und Innenraumgestaltung in Bonn.",
 }
 
@@ -23,7 +26,7 @@ export default function ImpressumPage() {
       </header>
 
       {/* Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+      <main id="main-content" tabIndex={-1} className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-3xl mx-auto prose prose-slate">
           
           <section className="mb-10">
@@ -141,7 +144,7 @@ export default function ImpressumPage() {
               Datenschutz
             </Link>
           </div>
-          <p className="mt-6 text-xs text-primary-foreground/50">
+          <p className="mt-6 text-xs text-primary-foreground/75">
             © 2026 mb.Raumtrend. Alle Rechte vorbehalten.
           </p>
         </div>

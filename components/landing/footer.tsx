@@ -87,7 +87,7 @@ export function Footer() {
             <ul className="space-y-2 text-primary-foreground/70">
               <li>Mo - Fr: Nach Vereinbarung</li>
               <li>Sa: Nach Vereinbarung</li>
-              <li className="pt-2 text-primary-foreground/50 text-sm">
+              <li className="pt-2 text-primary-foreground/75 text-sm">
                 Termine auch abends & am Wochenende möglich
               </li>
             </ul>
@@ -95,14 +95,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/50">
+          <p className="text-sm text-primary-foreground/75">
             © {currentYear} mb.Raumtrend. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-            <Link href="/impressum" className="text-primary-foreground/50 hover:text-primary-foreground transition-colors">
+            <Link href="/impressum" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">
               Impressum
             </Link>
-            <Link href="/datenschutz" className="text-primary-foreground/50 hover:text-primary-foreground transition-colors">
+            <Link href="/datenschutz" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">
               Datenschutz
             </Link>
             <CookieSettingsButton />
@@ -117,10 +117,10 @@ export function Footer() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-foreground/8 bg-primary-foreground/[0.03] hover:bg-primary-foreground/[0.07] hover:border-primary-foreground/15 transition-all duration-300"
           >
-            <span className="text-xs text-primary-foreground/35 group-hover:text-primary-foreground/55 transition-colors">
+            <span className="text-xs text-primary-foreground/75 group-hover:text-primary-foreground transition-colors">
               Digitale Strategie & Umsetzung von
             </span>
-            <span className="text-xs font-semibold text-primary-foreground/50 group-hover:text-primary-foreground/75 transition-colors">
+            <span className="text-xs font-semibold text-primary-foreground/75 group-hover:text-primary-foreground/75 transition-colors">
               meindigitalerbetrieb.de
             </span>
           </a>

@@ -4,7 +4,7 @@ import { Phone, ArrowRight, Star, Clock } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-svh flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -14,7 +14,7 @@ export function HeroSection() {
           className="object-cover"
           priority
           sizes="100vw"
-          quality={90}
+          quality={80}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/92 via-primary/85 to-primary/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
@@ -24,15 +24,15 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 md:px-6 py-20 md:py-28">
         <div className="max-w-3xl">
           {/* Promise Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-accent/95 text-accent-foreground px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-xl shadow-accent/25 animate-fade-in-up glow-accent">
-            <Clock className="h-4 w-4" />
+          <div className="inline-flex items-center gap-2.5 bg-accent/95 text-accent-foreground px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium mb-8 shadow-xl shadow-accent/25 glow-accent">
+            <Clock className="h-4 w-4 shrink-0" />
             Beratungstermin innerhalb von 48 Stunden
           </div>
 
           {/* Logo Style Header */}
-          <div className="mb-8 animate-fade-in-up animation-delay-100">
+          <div className="mb-8">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-none">
-              <span className="text-accent">mb.</span>
+              <span className="text-[#dc9292]">mb.</span>
               <span className="text-primary-foreground">Raumtrend</span>
             </h1>
             <p className="font-script text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 mt-3 -rotate-1">
@@ -40,7 +40,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed animate-fade-in-up animation-delay-200">
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
             <strong className="text-primary-foreground">Design-Vinyl, Parkett, Tapeten, Plissees & kreative Oberflächen</strong> für stilvolle Wohn- und Geschäftsräume in Bonn, Sankt Augustin & dem Rhein-Sieg-Kreis. Handwerkliche Präzision trifft nachhaltiges Design.
           </p>
 
@@ -51,14 +51,14 @@ export function HeroSection() {
           
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up animation-delay-500">
-            <Button asChild size="lg" className="text-base h-14 px-10 bg-accent hover:bg-accent/90 text-accent-foreground shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/35 transition-all duration-500 hover:-translate-y-1 glow-accent btn-press">
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            <Button asChild size="lg" className="text-sm sm:text-base h-14 px-5 sm:px-10 bg-accent hover:bg-accent/90 text-accent-foreground shadow-xl shadow-accent/25 hover:shadow-2xl hover:shadow-accent/35 transition-all duration-500 hover:-translate-y-1 glow-accent btn-press">
               <a href="#schnellanfrage">
                 Kostenlose Beratung anfragen
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-base h-14 px-10 bg-primary-foreground/10 border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground hover:border-primary-foreground/40 transition-all duration-500 btn-press">
+            <Button asChild variant="outline" size="lg" className="text-sm sm:text-base h-14 px-5 sm:px-10 bg-primary-foreground/10 border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground hover:border-primary-foreground/40 transition-all duration-500 btn-press">
               <a href="tel:022418664342" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
                 02241-8664342
@@ -67,14 +67,14 @@ export function HeroSection() {
           </div>
 
           {/* Social Proof */}
-          <div className="mt-10 pt-6 border-t border-primary-foreground/20 animate-fade-in-up animation-delay-600">
+          <div className="mt-10 pt-6 border-t border-primary-foreground/20">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               {/* Google Rating */}
               <a 
                 href="https://share.google/9EDWArteaFyrGohsJ" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="5.0 Sterne Google Bewertungen ansehen"
+                aria-label="5.0 Kundenbewertungen auf Google ansehen"
                 className="flex items-center gap-3 bg-primary-foreground/10 hover:bg-primary-foreground/15 rounded-xl px-4 py-3 transition-colors"
               >
                 <svg className="h-8 w-8" viewBox="0 0 24 24">
@@ -101,7 +101,7 @@ export function HeroSection() {
                 <p className="text-sm text-primary-foreground/80 italic">
                   "Wurden geduldig beraten und das Ergebnis war wie versprochen."
                 </p>
-                <p className="text-xs text-primary-foreground/60 mt-1">— Felix Probst, Bonn</p>
+                <p className="text-xs text-primary-foreground/75 mt-1">— Felix Probst, Bonn</p>
               </div>
             </div>
           </div>

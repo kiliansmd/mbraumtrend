@@ -1,3 +1,4 @@
+import { StructuredData } from "@/components/structured-data"
 import { Header } from "@/components/landing/header"
 import { HeroSection } from "@/components/landing/hero-section"
 import { TrustBar } from "@/components/landing/trust-bar"
@@ -23,8 +24,9 @@ import { StickyCTABar } from "@/components/landing/sticky-cta-bar"
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         {/* Hero with integrated social proof */}
         <HeroSection />
         

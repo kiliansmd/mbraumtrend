@@ -3,24 +3,21 @@ import type { Metadata } from 'next'
 import { DM_Sans, Cormorant_Garamond, Caveat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { CookieBanner } from '@/components/cookie-banner'
-import { StructuredData } from '@/components/structured-data'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import './globals.css'
 
-const _dmSans = DM_Sans({ 
+const dmSans = DM_Sans({ variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap"
 });
-const _cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"], 
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", preload: false,
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic"],
   display: "swap"
 });
-const _caveat = Caveat({ 
-  subsets: ["latin"], 
-  weight: ["400", "500", "600", "700"],
+const caveat = Caveat({ variable: "--font-caveat",
+  subsets: ["latin"],
   display: "swap"
 });
 
@@ -36,7 +33,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mb-raumtrend.de'),
+  metadataBase: new URL('https://www.mb-raumtrend.de'),
   title: {
     default: 'mb.Raumtrend | Raumausstattung Bonn & Sankt Augustin',
     template: '%s | mb.Raumtrend',
@@ -67,7 +64,7 @@ export const metadata: Metadata = {
     'mb.Raumtrend',
     'Marcel Brischke',
   ],
-  authors: [{ name: 'Marcel Brischke', url: 'https://mb-raumtrend.de' }],
+  authors: [{ name: 'Marcel Brischke', url: 'https://www.mb-raumtrend.de' }],
   creator: 'mb.Raumtrend - Raumausstattung & Innenraumgestaltung',
   publisher: 'mb.Raumtrend',
   formatDetection: {
@@ -87,12 +84,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://mb-raumtrend.de',
+    canonical: 'https://www.mb-raumtrend.de',
   },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://mb-raumtrend.de',
+    url: 'https://www.mb-raumtrend.de',
     siteName: 'mb.Raumtrend - Raumausstattung',
     title: 'mb.Raumtrend | Raumausstattung Bonn & Sankt Augustin',
     description: 'Ihr Spezialist für Innenraumgestaltung in Bonn, Sankt Augustin & Rhein-Sieg-Kreis. Bodenbeläge, Wandgestaltung & Raumausstattung. Kostenlose Beratung vor Ort.',
@@ -110,11 +107,6 @@ export const metadata: Metadata = {
     title: 'mb.Raumtrend | Raumausstattung Bonn & Sankt Augustin',
     description: 'Bodenbeläge, Wandgestaltung & Raumausstattung in Bonn & Sankt Augustin. Kostenlose Beratung. 5.0 Google Bewertung.',
     images: ['/og-image.jpg'],
-    creator: '@mbraumtrend',
-  },
-  // TODO: Echten Google Search Console Verification-Token eintragen
-  verification: {
-    google: 'verification-token',
   },
   category: 'Handwerk',
   classification: 'Raumausstattung',
@@ -131,8 +123,6 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'DE-NW',
     'geo.placename': 'Sankt Augustin',
-    'geo.position': '50.7667;7.1833',
-    'ICBM': '50.7667, 7.1833',
     'business:contact_data:locality': 'Sankt Augustin',
     'business:contact_data:region': 'Nordrhein-Westfalen',
     'business:contact_data:postal_code': '53757',
@@ -148,10 +138,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <head>
-        <StructuredData />
-      </head>
-      <body className="font-sans antialiased">
+      <body className={`${dmSans.variable} ${cormorant.variable} ${caveat.variable} font-sans antialiased`}>
+        <a href="#main-content" className="skip-link">Zum Inhalt springen</a>
         <ScrollToTop />
         {children}
         <CookieBanner />

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+export const dynamic = 'force-static'
 export const alt = 'mb.Raumtrend - Raumausstattung & Innenraumgestaltung'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
@@ -29,7 +29,7 @@ export default async function TwitterImage() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(194, 101, 58, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(194, 101, 58, 0.08) 0%, transparent 50%)',
+            backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(139, 26, 26, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 26, 26, 0.08) 0%, transparent 50%)',
           }}
         />
         
@@ -66,7 +66,7 @@ export default async function TwitterImage() {
               style={{
                 fontSize: '64px',
                 fontWeight: 700,
-                color: '#c2653a',
+                color: '#dc9292',
               }}
             >
               .
@@ -104,7 +104,7 @@ export default async function TwitterImage() {
             left: 0,
             right: 0,
             height: '6px',
-            background: 'linear-gradient(90deg, #c2653a 0%, #d4845f 50%, #c2653a 100%)',
+            background: 'linear-gradient(90deg, #dc9292 0%, #8b1a1a 50%, #dc9292 100%)',
           }}
         />
       </div>

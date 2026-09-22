@@ -66,7 +66,7 @@ export function CookieBanner() {
             <Cookie className="h-5 w-5 text-accent shrink-0" />
             <p className="text-sm text-muted-foreground">
               Wir nutzen Cookies für eine bessere Nutzererfahrung.{" "}
-              <Link href="/datenschutz" className="text-accent hover:underline">
+              <Link href="/datenschutz" className="text-accent underline underline-offset-2">
                 Mehr erfahren
               </Link>
             </p>
@@ -105,7 +105,7 @@ export function CookieSettingsButton() {
     <button
       type="button"
       onClick={openSettings}
-      className="text-primary-foreground/50 hover:text-primary-foreground transition-colors text-sm flex items-center gap-1"
+      className="text-primary-foreground/75 hover:text-primary-foreground transition-colors text-sm flex items-center gap-1"
     >
       <Cookie className="h-3 w-3" />
       Cookie-Einstellungen

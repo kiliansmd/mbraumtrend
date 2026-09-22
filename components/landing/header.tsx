@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/ui/logo"
@@ -8,6 +8,8 @@ import { Menu, Phone, Mail, X } from "lucide-react"
 import { WhatsAppChatButton } from "@/components/whatsapp-chat"
 
 export function Header() {
+  const panelRef = useRef<HTMLDivElement>(null)
+  const toggleRef = useRef<HTMLButtonElement>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -15,19 +17,38 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+    if (!isMobileMenuOpen) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    const panel = panelRef.current
+    const background = [...document.querySelectorAll<HTMLElement>("main, footer, header, .mobile-contact-bar")]
+    const previousInert = background.map((element) => element.inert)
+    background.forEach((element) => { element.inert = true })
+    panel?.querySelector<HTMLButtonElement>("button")?.focus()
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false)
+      if (event.key !== "Tab" || !panel) return
+      const focusable = [...panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')]
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
     }
+    const handleResize = () => { if (window.innerWidth >= 1024) setIsMobileMenuOpen(false) }
+    document.addEventListener("keydown", handleKey)
+    window.addEventListener("resize", handleResize)
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = previousOverflow
+      background.forEach((element, index) => { element.inert = previousInert[index] })
+      document.removeEventListener("keydown", handleKey)
+      window.removeEventListener("resize", handleResize)
+      toggleRef.current?.focus({ preventScroll: true })
     }
   }, [isMobileMenuOpen])
 
@@ -54,13 +75,13 @@ export function Header() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex h-18 md:h-22 items-center justify-between">
             {/* Logo - switches between white and colored version */}
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            <Link href="/" aria-label="mb.Raumtrend – Startseite"
               className="relative flex items-center z-10 cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] h-10 md:h-12"
             >
               {/* White logo - visible when not scrolled */}
               <Logo 
                 variant="white"
+                priority
                 animated
                 className={`h-10 md:h-12 w-auto absolute transition-opacity duration-500 ${
                   isScrolled ? "opacity-0" : "opacity-100"
@@ -74,10 +95,10 @@ export function Header() {
                   isScrolled ? "opacity-100" : "opacity-0"
                 }`}
               />
-            </button>
+            </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-10">
+            <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-5 xl:gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -97,6 +118,7 @@ export function Header() {
             <div className="hidden md:flex items-center gap-3">
               <a
                 href="tel:022418664342"
+                aria-label="02241-8664342 anrufen"
                 className={`flex items-center gap-2 text-sm transition-colors duration-300 ${
                   isScrolled
                     ? "text-muted-foreground hover:text-foreground"
@@ -114,6 +136,10 @@ export function Header() {
 
             {/* Mobile Menu Toggle */}
             <button
+              ref={toggleRef}
+              type="button"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`lg:hidden p-2 rounded-md transition-colors duration-300 z-10 ${
                 isScrolled
@@ -130,6 +156,8 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
+        inert={!isMobileMenuOpen}
+        aria-hidden={!isMobileMenuOpen}
         className={`fixed inset-0 z-[60] lg:hidden transition-all duration-300 ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
@@ -142,6 +170,11 @@ export function Header() {
         
         {/* Menu Panel */}
         <div
+          ref={panelRef}
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Hauptnavigation"
           className={`absolute top-0 right-0 h-full w-full max-w-sm bg-card shadow-2xl transition-transform duration-300 ease-out z-10 ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
@@ -156,7 +189,7 @@ export function Header() {
               />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-muted transition-colors"
+                className="p-3 rounded-full hover:bg-muted transition-colors"
                 aria-label="Menü schließen"
               >
                 <X className="h-6 w-6 text-foreground" />
@@ -181,6 +214,7 @@ export function Header() {
             <div className="border-t border-border px-6 py-6 space-y-3">
               <a
                 href="tel:022418664342"
+                aria-label="02241-8664342 anrufen"
                 className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2"
               >
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">

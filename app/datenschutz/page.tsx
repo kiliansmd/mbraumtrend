@@ -4,7 +4,10 @@ import { Logo } from "@/components/ui/logo"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung | mb.Raumtrend",
+  alternates: { canonical: "/datenschutz" },
+  openGraph: { title: "Datenschutzerklärung | mb.Raumtrend", description: "Datenschutzerklärung von mb.Raumtrend - Informationen zum Umgang mit Ihren personenbezogenen Daten.", url: "/datenschutz" },
+  twitter: { card: "summary_large_image", title: "Datenschutzerklärung | mb.Raumtrend", description: "Datenschutzerklärung von mb.Raumtrend - Informationen zum Umgang mit Ihren personenbezogenen Daten." },
+  title: "Datenschutzerklärung",
   description: "Datenschutzerklärung von mb.Raumtrend - Informationen zum Umgang mit Ihren personenbezogenen Daten.",
 }
 
@@ -23,7 +26,7 @@ export default function DatenschutzPage() {
       </header>
 
       {/* Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+      <main id="main-content" tabIndex={-1} className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="max-w-3xl mx-auto prose prose-slate">
 
           {/* 1. Verantwortliche Stelle */}
@@ -328,7 +331,7 @@ export default function DatenschutzPage() {
               Datenschutz
             </Link>
           </div>
-          <p className="mt-6 text-xs text-primary-foreground/50">
+          <p className="mt-6 text-xs text-primary-foreground/75">
             2026 mb.Raumtrend. Alle Rechte vorbehalten.
           </p>
         </div>

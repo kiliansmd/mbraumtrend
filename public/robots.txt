@@ -1,16 +1,5 @@
-# robots.txt for mb.Raumtrend
-# https://mb-raumtrend.de
-
 User-agent: *
 Allow: /
-
-# Disallow internal/hidden pages
 Disallow: /api/
-Disallow: /_next/
-Disallow: /buchung-bestaetigt
 
-# Sitemap location
-Sitemap: https://mb-raumtrend.de/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+Sitemap: https://www.mb-raumtrend.de/sitemap.xml
