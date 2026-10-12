@@ -31,10 +31,10 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section id="ablauf" className="py-20 md:py-28 bg-secondary">
+    <section id="ablauf" className="section-shell bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
+          <h2 className="section-heading font-bold text-foreground mb-4 text-balance">
             Unsere Arbeitsweise — strukturiert & transparent
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -47,14 +47,14 @@ export function ProcessSection() {
             <div key={step.number} className="relative">
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-border" />
+                <div className="hidden lg:block absolute top-6 left-12 right-[-1.5rem] h-px bg-border" />
               )}
               
-              <div className="relative bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-lg hover:border-accent/20 transition-all h-full border border-border/50">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary mb-5">
+              <div className="relative pt-0 pb-2 text-left h-full">
+                <div className="relative inline-flex items-center justify-center w-12 h-12 rounded-md bg-primary mb-6">
                   <span className="font-bold text-xl text-primary-foreground">{step.number}</span>
                 </div>
-                <h3 className="font-semibold text-xl mb-3 text-foreground">{step.title}</h3>
+                <h3 className="font-semibold text-lg mb-3 min-h-12 text-foreground">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export function ProcessSection() {
 
         {/* Festpreisgarantie Badge */}
         <div className="mt-12 md:mt-16 max-w-2xl mx-auto">
-          <div className="bg-card rounded-2xl p-6 md:p-8 border border-accent/20 shadow-lg shadow-accent/5">
+          <div className="bg-card rounded-lg p-6 md:p-8 border border-accent/20">
             <div className="flex flex-col md:flex-row items-center gap-5">
               <div className="shrink-0">
                 <div className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center">

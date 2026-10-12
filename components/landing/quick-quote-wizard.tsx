@@ -172,7 +172,7 @@ export function QuickQuoteWizard() {
 
   if (isSubmitted) {
     return (
-      <section id="schnellanfrage" className="py-20 md:py-28 bg-primary text-primary-foreground">
+      <section id="schnellanfrage" className="section-shell bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent mb-6">
@@ -191,7 +191,7 @@ export function QuickQuoteWizard() {
               <a href="mailto:info@mb-raumtrend.de" className="underline text-primary-foreground/80 hover:text-primary-foreground">info@mb-raumtrend.de</a>.
             </p>
             
-            <div className="bg-primary-foreground/10 rounded-2xl p-6 mb-8 text-left">
+            <div className="bg-primary-foreground/10 rounded-lg p-6 mb-8 text-left">
               <h3 className="font-semibold mb-4 text-lg">Ihre Anfrage im Überblick:</h3>
               <div className="space-y-2 text-primary-foreground/80">
                 <p><span className="text-primary-foreground">Projekt:</span> {projectTypes.find(p => p.id === projectType)?.label}</p>
@@ -214,7 +214,7 @@ export function QuickQuoteWizard() {
   }
 
   return (
-    <section id="schnellanfrage" className="py-16 md:py-24 lg:py-28 bg-primary text-primary-foreground overflow-hidden">
+    <section id="schnellanfrage" className="section-shell bg-primary text-primary-foreground overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -223,7 +223,7 @@ export function QuickQuoteWizard() {
               <Clock className="h-4 w-4" />
               In nur 1 Minute zur Anfrage
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+            <h2 className="section-heading font-bold mb-4 text-balance">
               Schnellanfrage starten
             </h2>
             <p className="text-lg text-primary-foreground/80 max-w-xl mx-auto">
@@ -238,9 +238,9 @@ export function QuickQuoteWizard() {
               <span className="text-primary-foreground/80 font-medium">Schritt {step} von {totalSteps}</span>
               <span className="text-accent font-semibold">{Math.round(progress)}% abgeschlossen</span>
             </div>
-            <div className="h-3 bg-primary-foreground/15 rounded-full overflow-hidden shadow-inner">
+            <div className="h-1.5 bg-primary-foreground/15 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-accent to-accent/80 rounded-full transition-all duration-500 ease-out shadow-sm"
+                className="h-full bg-[#dc9292] rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -258,7 +258,7 @@ export function QuickQuoteWizard() {
           </div>
 
           {/* Step Content */}
-            <div className="bg-primary-foreground/5 rounded-3xl p-6 md:p-10 border border-primary-foreground/10">
+            <div className="bg-primary-foreground/5 rounded-lg p-5 md:p-8 border border-primary-foreground/20">
             {/* Step 1: Project Type */}
             {step === 1 && (
               <div className="animate-fade-in">
@@ -271,9 +271,9 @@ export function QuickQuoteWizard() {
                       key={type.id}
                       aria-pressed={projectType === type.id}
                       onClick={() => setProjectType(type.id)}
-                      className={`p-4 md:p-5 rounded-xl md:rounded-2xl border-2 transition-all text-left group ${
+                      className={`p-4 md:p-5 rounded-md border transition-colors text-left group ${
                         projectType === type.id
-                          ? "border-accent bg-accent/10"
+                          ? "border-[#dc9292] bg-primary-foreground/10 ring-1 ring-[#dc9292]"
                           : "border-primary-foreground/20 hover:border-primary-foreground/40 hover:bg-primary-foreground/5"
                       }`}
                     >
@@ -302,9 +302,9 @@ export function QuickQuoteWizard() {
                       key={size.id}
                       aria-pressed={roomSize === size.id}
                       onClick={() => setRoomSize(size.id)}
-                      className={`p-4 md:p-5 rounded-xl md:rounded-2xl border-2 transition-all text-left ${
+                      className={`p-4 md:p-5 rounded-md border transition-colors text-left ${
                         roomSize === size.id
-                          ? "border-accent bg-accent/10"
+                          ? "border-[#dc9292] bg-primary-foreground/10 ring-1 ring-[#dc9292]"
                           : "border-primary-foreground/20 hover:border-primary-foreground/40 hover:bg-primary-foreground/5"
                       }`}
                     >
@@ -329,9 +329,9 @@ export function QuickQuoteWizard() {
                       key={tf.id}
                       aria-pressed={timeframe === tf.id}
                       onClick={() => setTimeframe(tf.id)}
-                      className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${
+                      className={`w-full p-4 rounded-md border transition-colors flex items-center gap-4 ${
                         timeframe === tf.id
-                          ? "border-accent bg-accent/10"
+                          ? "border-[#dc9292] bg-primary-foreground/10 ring-1 ring-[#dc9292]"
                           : "border-primary-foreground/20 hover:border-primary-foreground/40 hover:bg-primary-foreground/5"
                       }`}
                     >
@@ -372,7 +372,7 @@ export function QuickQuoteWizard() {
                         value={contact.name}
                         onChange={(e) => setContact({ ...contact, name: e.target.value })}
                         placeholder="Max Mustermann"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-[#dc9292] focus:ring-1 focus:ring-[#dc9292]"
                       />
                     </div>
                   </div>
@@ -388,7 +388,7 @@ export function QuickQuoteWizard() {
                         value={contact.phone}
                         onChange={(e) => setContact({ ...contact, phone: e.target.value })}
                         placeholder="0228 123456"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-[#dc9292] focus:ring-1 focus:ring-[#dc9292]"
                       />
                     </div>
                   </div>
@@ -404,7 +404,7 @@ export function QuickQuoteWizard() {
                         value={contact.email}
                         onChange={(e) => setContact({ ...contact, email: e.target.value })}
                         placeholder="max@beispiel.de"
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+                        className="w-full pl-12 pr-4 py-3 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/75 focus:outline-none focus:border-[#dc9292] focus:ring-1 focus:ring-[#dc9292]"
                       />
                     </div>
                   </div>

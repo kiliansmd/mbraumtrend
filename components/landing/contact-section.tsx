@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
   return (
-    <section id="kontakt" className="py-24 md:py-32 pb-32 md:pb-36 bg-background relative">
+    <section id="kontakt" className="section-shell bg-background relative">
       <div className="container mx-auto px-4 md:px-6 relative">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
           <div className="inline-flex items-center gap-2.5 text-accent mb-5">
             <Phone className="h-5 w-5" />
             <span className="text-sm font-semibold uppercase tracking-widest">
               Kontakt
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-5 leading-tight">
+          <h2 className="section-heading font-bold text-foreground mb-5 leading-tight">
             Sprechen Sie direkt
             <span className="text-accent"> mit Marcel</span>
           </h2>
@@ -28,9 +28,9 @@ export function ContactSection() {
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Left - Marcel Card */}
             <div className="lg:col-span-2">
-              <div className="bg-primary rounded-3xl p-8 text-primary-foreground h-full flex flex-col">
+              <div className="bg-primary rounded-xl p-8 text-primary-foreground h-full flex flex-col">
                 {/* Portrait */}
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden ring-2 ring-primary-foreground/10 mb-6">
+                <div className="relative w-24 h-24 rounded-lg overflow-hidden ring-2 ring-primary-foreground/10 mb-6">
                   <Image
                     src="/images/marcel-brischke.png"
                     alt="Marcel Brischke - Inhaber mb.Raumtrend"
@@ -81,14 +81,14 @@ export function ContactSection() {
               {/* Phone - Primary CTA */}
               <a
                 href="tel:022418664342"
-                className="group bg-card rounded-2xl border border-border/60 p-6 md:p-8 flex items-center gap-6 hover:border-accent/40 hover:shadow-lg transition-all duration-300"
+                className="group bg-card rounded-lg border border-border/60 p-5 md:p-7 flex items-center gap-4 md:gap-5 hover:border-accent/40 transition-all duration-300"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent flex items-center justify-center shrink-0 shadow-lg shadow-accent/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-accent flex items-center justify-center shrink-0 transition-transform duration-300">
                   <Phone className="h-6 w-6 md:h-7 md:w-7 text-accent-foreground" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-muted-foreground mb-1">Telefon (bevorzugt)</p>
-                  <p className="text-2xl md:text-3xl font-bold text-foreground">02241-8664342</p>
+                  <p className="text-xl md:text-2xl font-semibold text-foreground">02241-8664342</p>
                   <p className="text-sm text-muted-foreground mt-1">Direkter Draht zu Marcel</p>
                 </div>
                 <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all shrink-0 hidden md:block" />
@@ -99,14 +99,14 @@ export function ContactSection() {
                 href="https://wa.me/4917623100265?text=Hallo%20Herr%20Brischke%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-card rounded-2xl border border-border/60 p-6 md:p-8 flex items-center gap-6 hover:border-[#25D366]/40 hover:shadow-lg transition-all duration-300"
+                className="group bg-card rounded-lg border border-border/60 p-5 md:p-7 flex items-center gap-4 md:gap-5 hover:border-[#25D366]/40 transition-all duration-300"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#25D366] flex items-center justify-center shrink-0 shadow-lg shadow-[#25D366]/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-[#147d3c] flex items-center justify-center shrink-0 transition-transform duration-300">
                   <MessageCircle className="h-6 w-6 md:h-7 md:w-7 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-muted-foreground mb-1">WhatsApp</p>
-                  <p className="text-xl md:text-2xl font-bold text-foreground">Nachricht schreiben</p>
+                  <p className="text-lg md:text-xl font-semibold text-foreground break-words">Nachricht schreiben</p>
                   <p className="text-sm text-muted-foreground mt-1">Auch am Wochenende erreichbar</p>
                 </div>
                 <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-[#25D366] group-hover:translate-x-1 transition-all shrink-0 hidden md:block" />
@@ -115,14 +115,14 @@ export function ContactSection() {
               {/* Email */}
               <a
                 href="mailto:info@mb-raumtrend.de"
-                className="group bg-card rounded-2xl border border-border/60 p-6 md:p-8 flex items-center gap-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="group bg-card rounded-lg border border-border/60 p-5 md:p-7 flex items-center gap-4 md:gap-5 hover:border-primary/40 transition-all duration-300"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-primary flex items-center justify-center shrink-0 transition-transform duration-300">
                   <Mail className="h-6 w-6 md:h-7 md:w-7 text-primary-foreground" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-muted-foreground mb-1">E-Mail</p>
-                  <p className="text-xl md:text-2xl font-bold text-foreground">info@mb-raumtrend.de</p>
+                  <p className="text-lg md:text-xl font-semibold text-foreground break-words">info@mb-raumtrend.de</p>
                   <p className="text-sm text-muted-foreground mt-1">Antwort innerhalb von 24 Stunden</p>
                 </div>
                 <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 hidden md:block" />

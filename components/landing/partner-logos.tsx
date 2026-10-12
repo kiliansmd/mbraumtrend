@@ -37,7 +37,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   const isSvg = partner.src.endsWith(".svg")
 
   return (
-    <div className="group relative flex items-center justify-center w-full h-20 md:h-24 px-4 py-3 rounded-xl bg-background border border-border/50 hover:border-border hover:shadow-md transition-all duration-300">
+    <div className="group relative flex items-center justify-center w-full h-20 md:h-24 px-4 py-3 rounded-md bg-card border border-border/60">
       {isSvg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -45,7 +45,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
           alt={partner.name}
           width={160}
           height={80}
-          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain"
           loading="lazy"
         />
       ) : (
@@ -54,12 +54,12 @@ function PartnerLogo({ partner }: { partner: Partner }) {
           alt={partner.name}
           width={160}
           height={80}
-          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain opacity-70 grayscale-[40%] group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+          className="max-h-12 md:max-h-14 w-auto max-w-full object-contain"
         />
       )}
       {/* Tooltip on hover */}
       <span
-        className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-muted-foreground bg-background border border-border rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 shadow-sm"
+        className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-muted-foreground bg-background border border-border rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10"
         role="tooltip"
       >
         {partner.name}
@@ -73,7 +73,7 @@ export function PartnerLogos() {
     <section className="py-16 md:py-24 bg-muted/30" aria-labelledby="partner-heading">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center section-intro-gap">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-6">
             <Handshake className="h-4 w-4" />
             <span className="text-sm font-medium">Unsere Partner & Hersteller</span>
