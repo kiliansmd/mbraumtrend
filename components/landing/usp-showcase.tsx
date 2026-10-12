@@ -83,17 +83,17 @@ export function USPShowcase() {
   const [activeService, setActiveService] = useState(services[0])
 
   return (
-    <section id="leistungen" className="py-24 md:py-32 bg-background">
+    <section id="leistungen" className="section-shell bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
           <div className="inline-flex items-center gap-2.5 text-accent mb-5">
             <Sparkles className="h-5 w-5" />
             <span className="text-sm font-semibold uppercase tracking-widest">
               Unsere Leistungen
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance leading-tight">
+          <h2 className="section-heading font-bold text-foreground text-balance leading-tight">
             Raumgestaltung{" "}
             <span className="text-accent">aus einer Hand</span>
           </h2>
@@ -105,7 +105,7 @@ export function USPShowcase() {
         </div>
 
         {/* Service Tabs - Desktop */}
-        <div className="hidden md:flex flex-wrap justify-center gap-3 mb-12">
+        <div className="hidden md:flex flex-wrap justify-center gap-1 border-b border-border mb-8">
           {services.map((service) => (
             <button
               key={service.id}
@@ -114,10 +114,10 @@ export function USPShowcase() {
               aria-controls={`service-${service.id}`}
               onClick={() => setActiveService(service)}
               className={cn(
-                "flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300",
+                "flex items-center gap-2.5 px-5 py-4 border-b-2 text-sm font-semibold transition-colors duration-200",
                 activeService.id === service.id
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-card text-muted-foreground hover:bg-secondary hover:text-foreground border border-border/60"
+                  ? "border-accent text-accent"
+                  : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
               )}
             >
               <service.icon className="h-5 w-5" />
@@ -133,15 +133,12 @@ export function USPShowcase() {
             key={service.id}
             id={`service-${service.id}`}
             hidden={activeService.id !== service.id}
-            className={cn(
-              "bg-gradient-to-br rounded-3xl p-10 md:p-14 border border-border/40 transition-all duration-300",
-              service.accent
-            )}
+            className="bg-card rounded-lg p-8 md:p-10 border border-border"
           >
             <div className="flex flex-col lg:flex-row gap-10 items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                  <div className="w-14 h-14 rounded-lg bg-primary flex items-center justify-center">
                     <service.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <div>
@@ -172,7 +169,7 @@ export function USPShowcase() {
                 </ul>
                 <a
                   href="#schnellanfrage"
-                  className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
+                  className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-accent text-accent-foreground rounded-md font-semibold hover:bg-accent/90 transition-colors"
                 >
                   Jetzt beraten lassen
                   <ArrowRight className="h-4 w-4" />
@@ -189,10 +186,7 @@ export function USPShowcase() {
             <a
               key={service.id}
               href="#schnellanfrage"
-              className={cn(
-                "bg-gradient-to-br rounded-2xl p-6 border border-border/40 block active:scale-[0.98] transition-all duration-200 hover:border-accent/40 hover:shadow-lg",
-                service.accent
-              )}
+              className="bg-card rounded-lg p-5 border border-border block transition-colors duration-200 hover:border-accent/40"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">

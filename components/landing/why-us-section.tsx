@@ -30,14 +30,14 @@ const features = [
 
 export function WhyUsSection() {
   return (
-    <section className="py-24 md:py-32 bg-card">
+    <section className="section-shell bg-card">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
           <div className="inline-flex items-center gap-2.5 text-accent mb-5">
             <Sparkles className="h-5 w-5" />
             <span className="text-sm font-semibold uppercase tracking-widest">Unser Versprechen</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance leading-tight">
+          <h2 className="section-heading font-bold text-foreground text-balance leading-tight">
             Handwerk, wie es sein sollte
           </h2>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -47,24 +47,24 @@ export function WhyUsSection() {
 
         <div className="grid sm:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {features.map((feature, index) => (
-            <div 
-              key={feature.title} 
-              className="bg-background rounded-2xl p-7 md:p-9 border border-border/60 hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 group card-hover"
+            <div
+              key={feature.title}
+              className="py-7 md:py-8 border-t border-border group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shrink-0 group-hover:bg-accent transition-all duration-500 shadow-lg shadow-primary/20 group-hover:shadow-accent/30">
+                <div className="w-12 h-12 rounded-md bg-primary flex items-center justify-center shrink-0 group-hover:bg-accent transition-all duration-500">
                   <feature.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="font-bold text-xl md:text-2xl text-foreground pt-3">{feature.title}</h3>
+                <h3 className="font-bold text-xl md:text-2xl text-foreground pt-2">{feature.title}</h3>
               </div>
-              
+
               {/* Old Way - crossed out */}
               <div className="flex items-start gap-3 mb-4 opacity-100 transition-opacity">
                 <Ban className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
                 <p className="text-muted-foreground line-through text-sm">{feature.oldWay}</p>
               </div>
-              
+
               {/* New Way - highlighted */}
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-success shrink-0 mt-0.5" />
@@ -74,18 +74,18 @@ export function WhyUsSection() {
           ))}
         </div>
 
-        <div className="mt-20 md:mt-28 relative max-w-4xl mx-auto">
+        <div className="mt-12 md:mt-16 relative max-w-4xl mx-auto">
           {/* Subtle decorative border accent */}
-          <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/30 via-primary/20 to-accent/10" />
-          <div className="relative bg-primary rounded-3xl p-8 md:p-12 shadow-2xl shadow-primary/25 overflow-hidden">
+
+          <div className="relative bg-primary rounded-xl p-8 md:p-12 overflow-hidden">
             {/* Background pattern */}
-            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-            
+
+
             <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-10">
               {/* Photo */}
               <div className="shrink-0">
                 <div className="relative">
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden ring-2 ring-primary-foreground/10 shadow-xl">
+                  <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden ring-2 ring-primary-foreground/10">
                     <Image
                       src="/images/marcel-brischke.png"
                       alt="Marcel Brischke - Inhaber mb.Raumtrend"
@@ -98,7 +98,7 @@ export function WhyUsSection() {
                     href="https://share.google/9EDWArteaFyrGohsJ"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute -bottom-3 -right-3 bg-background rounded-xl px-3 py-1.5 shadow-lg flex items-center gap-1.5 hover:shadow-xl hover:scale-105 transition-all duration-200"
+                    className="absolute -bottom-3 -right-3 bg-background rounded-xl px-3 py-1.5 flex items-center gap-1.5 hover:scale-105 transition-all duration-200"
                     aria-label="5.0 Google Bewertungen ansehen"
                   >
                     <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export function WhyUsSection() {
                   </a>
                 </div>
               </div>
-              
+
               {/* Bio & Quote */}
               <div className="text-center md:text-left flex-1">
                 <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-5">
@@ -145,7 +145,7 @@ export function WhyUsSection() {
                 {/* CTA */}
                 <a
                   href="#schnellanfrage"
-                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold hover:bg-accent/90 transition-colors shadow-lg shadow-accent/30 text-sm"
+                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-md font-semibold hover:bg-accent/90 transition-colors text-sm"
                 >
                   Kostenlose Beratung anfragen
                   <ArrowRight className="h-4 w-4" />

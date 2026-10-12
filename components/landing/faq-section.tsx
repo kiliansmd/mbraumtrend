@@ -10,7 +10,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="py-20 md:py-28 bg-secondary">
+    <section className="section-shell bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -19,7 +19,7 @@ export function FAQSection() {
               <HelpCircle className="h-5 w-5" />
               <span className="text-sm font-semibold uppercase tracking-wider">Häufige Fragen</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+            <h2 className="section-heading font-bold text-foreground mb-4 text-balance">
               Ihre Fragen — unsere Antworten
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -32,7 +32,7 @@ export function FAQSection() {
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className="bg-card rounded-2xl border border-border/50 overflow-hidden transition-all duration-300 hover:border-accent/30"
+                className="bg-card rounded-lg border border-border/50 overflow-hidden transition-all duration-300 hover:border-accent/30"
               >
                 <button
                   type="button"
@@ -71,7 +71,7 @@ export function FAQSection() {
           </div>
 
           {/* Additional help CTA */}
-          <div className="mt-10 text-center p-6 bg-primary/5 rounded-2xl border border-primary/10">
+          <div className="mt-10 text-center p-6 bg-primary/5 rounded-lg border border-primary/10">
             <p className="text-foreground font-medium mb-2">
               Noch Fragen? Wir helfen gerne!
             </p>

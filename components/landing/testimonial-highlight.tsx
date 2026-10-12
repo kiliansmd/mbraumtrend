@@ -7,23 +7,22 @@ export function TestimonialHighlight() {
   return (
     <section className="py-16 md:py-20 bg-card relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-      
+
+
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-background rounded-3xl p-8 md:p-12 shadow-lg border border-border relative">
+          <div className="bg-background rounded-lg p-6 md:p-10 border-l-2 border-accent relative">
             {/* Quote icon */}
             <div className="absolute -top-5 left-8 md:left-12">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent flex items-center justify-center">
                 <Quote className="h-5 w-5 md:h-6 md:w-6 text-accent-foreground" />
               </div>
             </div>
-            
+
             <div className="flex flex-col lg:flex-row gap-8 items-center">
               {/* Photo */}
               <div className="shrink-0">
-                <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-2xl overflow-hidden ring-4 ring-primary/10 shadow-xl">
+                <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-lg overflow-hidden ring-4 ring-primary/10">
                   <Image
                     src="/images/testimonials/kilian-schmidt.png"
                     alt="Kilian Schmidt - Geschäftsführer getexperts GmbH"
@@ -32,7 +31,7 @@ export function TestimonialHighlight() {
                   />
                 </div>
               </div>
-              
+
               {/* Content */}
               <div className="flex-1 text-center lg:text-left">
                 {/* Stars */}
@@ -41,14 +40,14 @@ export function TestimonialHighlight() {
                     <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                
+
                 {/* Quote text */}
                 <blockquote className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed mb-6">
-                  "Mit mb.Raumtrend haben wir einen Partner gefunden, der versteht, was modernes Arbeiten bedeutet. 
-                  Unsere neuen Büroräume spiegeln jetzt unsere Unternehmenskultur wider — 
+                  "Mit mb.Raumtrend haben wir einen Partner gefunden, der versteht, was modernes Arbeiten bedeutet.
+                  Unsere neuen Büroräume spiegeln jetzt unsere Unternehmenskultur wider —
                   <span className="text-accent font-medium">professionell umgesetzt, termingerecht und mit echtem Verständnis für unsere Anforderungen.</span>"
                 </blockquote>
-                
+
                 {/* Author with Logo */}
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                   <div className="text-center md:text-left">
@@ -65,7 +64,7 @@ export function TestimonialHighlight() {
                     />
                   </div>
                   <div className="hidden md:block w-px h-10 bg-border" />
-                  <a 
+                  <a
                     href="https://share.google/9EDWArteaFyrGohsJ"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,10 +80,10 @@ export function TestimonialHighlight() {
                   </a>
                 </div>
               </div>
-              
+
               {/* Project info card */}
               <div className="shrink-0 w-full lg:w-auto">
-                <div className="bg-primary/5 rounded-2xl p-5 md:p-6 text-center">
+                <div className="bg-primary/5 rounded-lg p-5 md:p-6 text-center">
                   <p className="text-sm text-muted-foreground mb-3">Projekt</p>
                   <div className="space-y-2">
                     <div className="flex items-center justify-center gap-2">

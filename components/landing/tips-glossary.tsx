@@ -120,15 +120,15 @@ export function TipsGlossary() {
 
 
   return (
-    <section id="tipps" className="py-20 md:py-28 bg-card">
+    <section id="tipps" className="section-shell bg-card">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
           <div className="inline-flex items-center gap-2 text-accent mb-4">
             <Lightbulb className="h-5 w-5" />
             <span className="text-sm font-medium uppercase tracking-wider">Expertenwissen</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="section-heading font-bold text-foreground mb-4">
             Tipps & Best Practices
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -152,7 +152,7 @@ export function TipsGlossary() {
               className={cn(
                 "flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-300",
                 activeCategory === category.id
-                  ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
               )}
             >
@@ -188,7 +188,7 @@ export function TipsGlossary() {
                     tip.highlight 
                       ? "border-accent/30 bg-accent/5" 
                       : "border-border bg-background",
-                    isExpanded && "shadow-md"
+                    isExpanded && "border-accent/40"
                   )}
                 >
                   <button
@@ -243,7 +243,7 @@ export function TipsGlossary() {
           ))}
 
           {/* CTA */}
-          <div className="text-center mt-10 p-6 bg-secondary rounded-2xl">
+          <div className="text-center mt-10 p-6 bg-secondary rounded-lg">
             <p className="text-foreground font-medium mb-2">
               Haben Sie Fragen zu Ihrem konkreten Projekt?
             </p>

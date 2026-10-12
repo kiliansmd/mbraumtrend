@@ -66,14 +66,14 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out border-b ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ease-out border-b ${
           isScrolled
-            ? "bg-card shadow-xl border-border"
+            ? "bg-card shadow-sm border-border"
             : "bg-primary border-primary-foreground/10"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex h-18 md:h-22 items-center justify-between">
+          <div className="flex h-18 md:h-20 items-center justify-between">
             {/* Logo - switches between white and colored version */}
             <Link href="/" aria-label="mb.Raumtrend – Startseite"
               className="relative flex items-center z-10 cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] h-10 md:h-12"
@@ -129,7 +129,7 @@ export function Header() {
                 <span className="hidden xl:inline">02241-8664342</span>
               </a>
               <WhatsAppChatButton />
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-500 hover:-translate-y-0.5 btn-press">
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground transition-colors duration-200 btn-press">
                 <a href="#kontakt">Beratung anfragen</a>
               </Button>
             </div>
@@ -141,7 +141,7 @@ export function Header() {
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-md transition-colors duration-300 z-10 ${
+              className={`lg:hidden p-3 rounded-md transition-colors duration-300 z-10 ${
                 isScrolled
                   ? "text-foreground hover:bg-muted"
                   : "text-primary-foreground hover:bg-primary-foreground/10"

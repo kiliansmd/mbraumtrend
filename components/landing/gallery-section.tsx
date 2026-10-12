@@ -61,14 +61,14 @@ export function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<(typeof galleryImages)[0] | null>(null)
 
   return (
-    <section id="galerie" className="py-20 md:py-28 bg-background">
+    <section id="galerie" className="section-shell bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-3xl mx-auto section-intro-gap">
           <div className="inline-flex items-center gap-2 text-accent mb-3">
             <Camera className="h-5 w-5" />
             <span className="text-sm font-medium uppercase tracking-wider">Referenzen</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="section-heading font-bold text-foreground mb-4 text-balance">
             Projekte aus Bonn, Sankt Augustin & Umgebung
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -81,20 +81,20 @@ export function GallerySection() {
             <button
               key={index}
               onClick={() => setSelectedImage(image)}
-              className="group relative aspect-[4/3] rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              className="group relative aspect-[4/3] rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
             >
               <Image
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 400px"
                 loading="lazy"
                 quality={80}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-visible:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-transparent opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-left">
-                  <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                  <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-2.5 py-1 rounded-md mb-2">
                     {image.category}
                   </span>
                   <p className="text-primary-foreground font-semibold text-sm mb-1">

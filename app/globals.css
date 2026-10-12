@@ -37,7 +37,9 @@
   /* Success/Green */
   --success: hsl(155, 45%, 29%);
   --success-foreground: hsl(0, 0%, 98%);
-  --radius: 0.625rem;
+  --radius: 0.5rem;
+  --section-space: clamp(3.5rem, 6vw, 6rem);
+  --intro-space: clamp(2rem, 4vw, 3.5rem);
   --sidebar: hsl(214, 52%, 16%);
   --sidebar-foreground: hsl(0, 0%, 97%);
   --sidebar-primary: hsl(0, 65%, 32%);
@@ -456,7 +458,7 @@
   button:not(:disabled), a { touch-action: manipulation; }
   ::selection { background: #8b1a1a; color: white; }
 }
-.container { max-width: 80rem; }
+.container { max-width: 78rem; }
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10000; padding: .8rem 1.2rem; border-radius: .5rem; background: white; color: #162d4a; transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
 @media (max-width: 767px) {
@@ -471,4 +473,114 @@
 
 #schnellanfrage .text-accent { color: #edb0b0; }
 
-h1, h2, h3, .prose { overflow-wrap: anywhere; }
+h1, h2, h3 { overflow-wrap: break-word; }
+.prose { overflow-wrap: anywhere; }
+
+/* Refinement: shared proportions, with different treatments for different roles. */
+.section-shell {
+  padding-block: var(--section-space);
+}
+
+.section-heading {
+  font-size: clamp(1.875rem, 3.4vw, 2.875rem);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+
+.section-intro-gap {
+  margin-bottom: var(--intro-space);
+}
+
+.hero-section {
+  min-height: max(46rem, 88svh);
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgb(22 45 74 / .97) 0%, rgb(22 45 74 / .92) 38%, rgb(22 45 74 / .64) 62%, rgb(22 45 74 / .24) 100%);
+}
+
+#leistungen [id^="service-"] > div > div {
+  min-width: 0;
+}
+
+#leistungen [id^="service-"] ul {
+  border-left: 1px solid var(--border);
+  padding-left: 2rem;
+}
+
+#leistungen [id^="service-"] li {
+  line-height: 1.5;
+}
+
+#schnellanfrage input {
+  min-height: 3rem;
+}
+
+#schnellanfrage button[aria-pressed] {
+  min-height: 3.5rem;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Only interactive elements receive movement or elevation. */
+.card-hover:hover, .hover-lift:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.animate-fade-in {
+  animation-duration: .2s;
+}
+
+.prose > section {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose > section:last-child {
+  border-bottom: 0;
+}
+
+.prose p, .prose li {
+  line-height: 1.75;
+}
+
+@media (min-width: 1024px) {
+  #leistungen [id^="service-"] > div {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100svh;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, rgb(22 45 74 / .94), rgb(22 45 74 / .78));
+  }
+
+  .container {
+    padding-inline: 1.25rem;
+  }
+
+  #schnellanfrage input {
+    font-size: 1rem;
+  }
+
+  #kontakt a[href^="mailto:"] p {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #leistungen [id^="service-"] ul {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+}
